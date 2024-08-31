@@ -1,0 +1,131 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');*/
+
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*  font-family: 'Poppins', sans-serif;*/
+/*}*/
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cover {
+  position: relative;
+  width: 50%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cover.route-active {
+  transform: rotateY(180deg);
+}
+
+.cover .front, .cover .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.cover .back {
+  transform: rotateY(180deg);
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.text-1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.text-2 {
+  font-size: 16px;
+}
+
+.form {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 5s, transform 0.8s;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form-route-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.form-content {
+  width: 80%;
+}
+
+button.mat-flat-button {
+  width: 100%;
+}
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+/*input.example-right-align::-webkit-outer-spin-button,*/
+/*input.example-right-align::-webkit-inner-spin-button {*/
+/*  display: none;*/
+/*}*/
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+ /*.material-symbols-outlined {*/
+ /*  font-variation-settings:*/
+ /*    'FILL' 0,*/
+ /*    'wght' 400,*/
+ /*    'GRAD' 0,*/
+ /*    'opsz' 24*/
+ /*}*/

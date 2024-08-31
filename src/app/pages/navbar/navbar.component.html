@@ -1,0 +1,22 @@
+<p>
+  <mat-toolbar class="flex items-center justify-between background">
+    <div>
+      <span>RecipeReel</span>
+    </div>
+    <div>
+      <span class="example-spacer"></span>
+      <button (click)="$event.stopPropagation(); isMenuVisible=true" mat-button>
+        {{user.fullName}}
+        <div (click)="$event.stopPropagation()" *ngIf="isMenuVisible" class="flex flex-col items-center fixed right-0
+            border border-solid border-gray-300 rounded-b gap-2 pb-2 bg-blend-darken bg-gray-950 bg-opacity-50">
+        <div class=" text-center border-0 border-b
+          border-solid border-gray-300 p-2 px-8">
+          <strong>{{user.fullName}}</strong>
+          <div>{{user.email}}</div>
+        </div>
+        <button class="opacity-100" (click)="authService.logout()" mat-stroked-button>Sign Out</button>
+        </div>
+      </button>
+    </div>
+  </mat-toolbar>
+</p>

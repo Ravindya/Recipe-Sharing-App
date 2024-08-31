@@ -1,0 +1,33 @@
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <img mat-card-avatar src="https://media.licdn.com/dms/image/D4D03AQE5E5Jnxe1aDA/profile-displayphoto-shrink_800_800/0/1678800060834?e=2147483647&v=beta&t=n20KKVApI9bhzEXkDoz9dMCiev9qKUSD3D5H0RKPwDw" alt="ravi-logo">
+    <mat-card-title>{{recipe.user.fullName}}</mat-card-title>
+    <mat-card-subtitle class="!text-xs">code_with_ravi</mat-card-subtitle>
+  </mat-card-header>
+  <img class="max-h-[400px] object-cover !mb-4" mat-card-image [src]="recipe.image" alt="Photo of pan cake">
+  <mat-card-content>
+    <p class="text-xl font-bold">
+      {{recipe.title}}
+    </p>
+    <p>
+      {{recipe.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-between">
+    <div>
+      <button (click)="onLike(recipe.id)" mat-icon-button>
+        <mat-icon [class.liked]="isLiked(recipe.id)">favorite</mat-icon>
+      </button>
+      <button (click)="handleOpenEditRecipeForm()" mat-icon-button >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button >
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+    <button (click)="onDelete(recipe.id)" mat-icon-button class="flex">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
+

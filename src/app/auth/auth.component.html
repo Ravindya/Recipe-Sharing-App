@@ -1,0 +1,97 @@
+<div class="flex justify-center h-screen items-center overflow-hidden">
+  <div class="container bg-gray-700">
+    <div class="cover" [ngClass]="{'route-active': isRegister}">
+      <div class="front" *ngIf="!isRegister">
+        <img class="opacity-40" src="https://images.pexels.com/photos/3992368/pexels-photo-3992368.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+        <div class="text">
+          <span class="text-1">Share, Savor, and Create: Your Recipe Haven Awaits!</span>
+          <br>
+          <span class="text-2">Let's get connected</span>
+        </div>
+      </div>
+      <div class="back" *ngIf="isRegister">
+        <img class="opacity-40" src="https://media.istockphoto.com/id/1690539318/photo/beautiful-sporty-woman-eating-healthy-sanwich-while-looking-at-camera-in-the-kitchen-at-home.jpg?s=612x612&w=0&k=20&c=xYFhCUreWghLfl-9JzUgRQ142vcrsDoieT6ulZaBrsM=" alt="">
+        <div class="text">
+          <span class="text-1">Create and Share Your Favorite Recipes!</span>
+          <br>
+          <span class="text-2">Join our community today</span>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <div class="form-content">
+        <div *ngIf="isRegister; else signinForm">
+          <h4 class="text-lg font-bold text-center pb-8">Create an account</h4>
+          <form [formGroup]="registrationForm" (ngSubmit)="handleRegister()" class="w-full p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Enter your name" formControlName="fullName" class="py-2 px-3 mt-1">
+              </mat-form-field>
+            </div>
+            <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Enter your email" formControlName="email" class="py-2 px-3 mt-1">
+              </mat-form-field>
+            </div>
+            <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Enter your password" formControlName="password" [type]="hide ? 'password' : 'text'"  />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="togglePasswordVisibility()"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon >{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="flex justify-center items-center !mb-3">
+              <button  mat-flat-button class="!bg-gray-400 w-full " type="submit">Sign up</button>
+            </div>
+            <div >Already have an account ?
+              <button class="text-sky-300 hover:text-blue-500" (click)="toggleRegister()">Login</button>
+            </div>
+          </form>
+        </div>
+        <ng-template #signinForm>
+          <div>
+            <h4 class="text-lg font-bold text-center pb-8">Hi, Welcome Back! 👋</h4>
+            <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="w-full p-6 rounded-lg shadow-md">
+              <div class="mb-4">
+                <mat-form-field class="w-full">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Enter your email" formControlName="email" class="py-2 px-3 mt-1">
+                </mat-form-field>
+              </div>
+              <div class="mb-4">
+                <mat-form-field class="w-full">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Enter your password"  [type]="hide ? 'password' : 'text'" formControlName="password" />
+                  <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="togglePasswordVisibility()"
+                    [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+              <div class="flex justify-center items-center !mb-3">
+                <button mat-flat-button class="!bg-gray-400 w-full" color="primary" type="submit">Login</button>
+              </div>
+              <div >Don't have an account ?
+                <button class="text-sky-300 hover:text-blue-500" (click)="toggleRegister()">Sign-up</button>
+              </div>
+            </form>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+

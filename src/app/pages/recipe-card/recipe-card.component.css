@@ -1,0 +1,11 @@
+.example-card {
+  max-width: 400px;
+}
+mat-icon {
+  color: grey;
+}
+
+.liked {
+  color: red;
+}
+
