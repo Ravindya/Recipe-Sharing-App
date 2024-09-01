@@ -163,7 +163,7 @@ Open a pull request.
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Thank you for checking out the Typing Speed Tester. Enjoy your adventure & improve your skill!
+Thank you for checking out the Recipe Sharing Full Stack Project. Enjoy your adventure & improve your skill!
 
 ### Contact :
 Ravindya Jayasooriya<br>
