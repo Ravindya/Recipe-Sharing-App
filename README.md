@@ -40,7 +40,7 @@ Follow these steps to set up the project on your local machine:
 Begin by cloning the GitHub repository to your local machine:
 
 ```bash
-git clone <your-github-repo-url>
+git clone https://github.com/Ravindya/Recipe-Sharing-App.git
 cd recipe-sharing-app
 ```
 
